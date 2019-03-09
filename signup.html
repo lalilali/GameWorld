@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game World 遊戲世界</title>
+	<meta charset="utf-8">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/member.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+			<div id="header"> <a href="main.php" id="logo"><img src="images/gameworld.png" width="295" height="55"></a>
+				<ul class="navigation">
+					<li>
+						<a href="main.php">Home</a>
+					</li>
+					<li>
+						<a href="rankings.php">Rankings</a>
+					</li>
+					<li>
+						<a href="member.html">Log In</a>
+					</li>
+					<li>
+						<a class="active" href="signup.html">Sign up</a>
+					</li>
+				</ul>
+			</div>
+            <div align="center">
+            
+                <form action="insert.php" method="post" class="login-form">
+                    <h2>Create your account</h2>
+                    <div class="username">
+                    <input type="text" name="id"  required>
+                    <span class="user-icon icon">id</span>
+                    </div>
+                    <div class="password">
+                    <input type="password" name="password" maxlength="20" required>
+                    <span class="user-icon icon">pw</span>
+                    </div>
+                    <div class="password">
+                    <input type="name" name="name" required>
+                    <span class="user-icon icon">name</span>
+                    </div>
+                    <div class="account-control">
+                    <button type="submit">Create</button>
+                    </div>
+                    <a class="not-registered" href="member.html">Have an account?</a>
+                </form>
+            </div>
+			<!-- end of body-->
+			<div id="footer">
+				<div>
+					<div class="header"> <a href="main.php"><img class="logo" src="images/logo2.png" width="187" height="37" alt="logo"></a>
+						<ul class="connect">
+							<li>
+								<a href="https://www.facebook.com" class="facebook">&nbsp;</a>
+							</li>
+							<li>
+								<a href="https://twitter.com/" class="twitter">&nbsp;</a>
+							</li>
+							<li>
+								<a href="https://www.google.com.tw/" class="googleplus">&nbsp;</a>
+							</li>
+						</ul>
+					</div>
+					<div class="body">
+						<ul class="navigation">
+							<li>
+								<a href="main.php">Home</a>
+							</li>
+							<li>
+								<a href="rankings.php">Rankings</a>
+							</li>
+							<li>
+								<a href="memeber.html">Log In</a>
+							</li>
+							<li>
+								<a href="signup.html">Sign Up</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="footnote"> &copy; Copyright &copy; 2018 甘哲宇 all rights reserved </div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

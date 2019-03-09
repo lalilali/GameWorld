@@ -1,0 +1,155 @@
+/*登錄表單form樣式*/
+.login-form {
+  width:400px;
+  height:300px;
+  margin:70px auto 0;
+  padding-top:73px;
+  background-color:pink;
+  position:relative;/*為用戶頭像定位做一個參照點*/
+  box-shadow:0 3px 3px rgba(21,62,78,0.8);/*陰影效果實現*/
+}
+/*使用偽類製作用戶頭像效果*/
+.login-form:before {
+  content:"";
+  position:absolute;
+  top:-50px;
+  left:150px;
+  width:102px;
+  height:102px;
+  padding:2px;
+  border:1px solid rgb(216,216,219);
+  background:#fff url("profilepicture.jpg") no-repeat 2px 2px;/*加載用戶頭像*/
+}
+/*註冊提示訊息*/
+.not-registered {
+  position:relative;
+  color:blue;
+  font-weight:bold;
+  top:calc(100%+20);/*相當於bottom:-66px(div.not-registered自身的高度46px加上向下行動的20px)*/ 
+  width:400px;
+  height:46px;
+  margin:0 auto;
+  line-height:46px;
+  text-align: center;
+}
+.not-registered a {
+  margin-left:5px;
+  text-decoration: none;
+  color:rgb(52,119,182);
+  cursor: pointer;
+}
+/*表單內部元素樣式設置*/
+.login-form div {
+  width:216px;
+  height:28px;
+  margin:20px auto;
+  position:relative;
+  line-height:28px;
+  border:none;
+}
+/*用戶和密碼的icon製作*/
+.login-form .user-icon, 
+.login-form .password-icon {
+  display:inline-block;
+  font-family: 'loginform-icon';
+  font-size:14px;
+  text-align:center;
+  line-height:28px;
+  color:black;
+  position:absolute;
+  left:1px;
+  top:1px;
+  background-color:cyan;
+  border:none;
+  border-right:1px solid rgb(229,229,232);
+  width:30px;
+  height:28px;
+  transition: all 300ms linear;
+}
+/*表單input的樣式*/
+.login-form .username input, .login-form .password input {
+  height:100%;
+  width:calc(100% - 40px);/*使用calc計算表單的寬度（其中40px是用來放icon的空間）*/
+  padding-left:40px;
+  border-radius:2px;
+  border:1px solid;
+  border-color:rgb(229,229,232) rgb(220,220,221) rgb(213,213,213) rgb(220,220,221);
+  display:block;
+  transition: all 300ms linear;
+}
+/*使用偽類製作三角效果*/
+.login-form .icon:before, .login-form .icon:after {
+  content:"";
+  position:absolute;
+  top:10px;
+  left:30px;
+  width:0;
+  height:0;
+  border:4px solid transparent;
+  border-left-color:black;
+}
+.login-form .icon:before {
+  top:9px;
+  border:5px solid transparent;
+  border-left-color:blue;
+}
+/*表單焦點狀態下效果*/
+.login-form .username input:focus, .login-form .password input:focus {
+  border-color:rgb(69,153,228);
+  box-shadow:0 0 2px 1px rgb(200,223,244);
+}
+.login-form .username input:focus + span, .login-form .password input:focus + span {
+  background:-*-linear-gradient(top,rgb(255,255,255),rgb(245,245,245));
+  color:rgb(51,51,51);
+}
+.login-form .username input:focus + span:after, .login-form .password input:focus + span:after {
+  border-left-color:rgb(250,250,250);
+}
+.login-form .account-control label {
+  margin-left:24px;
+  font-size:12px;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor:pointer;
+}
+/*按鈕效果*/
+.login-form button[type="submit"] {
+  color:red;
+  font-weight:bold;
+  float:right;
+  width:68px;
+  height:30px;
+  position:relative;
+  background:-*-linear-gradient(top,rgb(74,162,241),rgb(52,119,182)) 1px 0 no-repeat,
+       -*-linear-gradient(top,rgb(52,118,181),rgb(36,90,141)) left top no-repeat;
+  background-size:66px 28px,68px 29px;
+  border:none;
+  border-top:1px solid rgb(52,118,181);
+  border-radius:2px;
+  box-shadow:inset 0 1px 0 rgb(86,174,251);
+  text-shadow:0 1px 1px rgb(51,113,173);
+  transition: all 200ms linear;
+}
+.login-form button[type="submit"]:hover {
+  text-shadow:0 0 2px rgb(255,255,255);
+  box-shadow:inset 0 1px 0 rgb(86,174,251),0 0 10px 3px rgba(74,162,241,0.5);
+}
+.login-form button[type="submit"]:active {
+  background:-*-linear-gradient(top,rgb(52,119,182),rgb(74,162,241)) 1px 0 no-repeat,
+       -*-linear-gradient(top,rgb(52,118,181),rgb(36,90,141)) left top no-repeat;
+}
+/*自定義復選框效果*/
+.login-form .account-control input {
+  width:0px;
+  height:0px;
+}
+/*調用伺服器字體*/
+@font-face {
+  font-family: 'loginform-icon';
+  src: url("font/loginform-icon.eot");
+  src: url("font/loginform-icon.eot?#iefix") format('embedded-opentype'),
+    url("font/loginform-icon.woff") format('woff'),
+    url("font/loginform-icon.ttf") format('truetype'),
+    url("font/loginform-icon.svg#loginform-icon") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
